@@ -1,0 +1,4 @@
+^D:\HOME\VULKAN\BYCHATGPT\FIRSTLEARN\FIRSTLEARN\TRIANGLE.FRAG
+"C:\VulkanSDK\1.4.335.0\Bin\glslc.exe" "D:\home\vulkan\byChatGPT\FirstLearn\FirstLearn\triangle.frag" -o "D:\home\vulkan\byChatGPT\FirstLearn\FirstLearn\triangle.frag.spv"
+^D:\HOME\VULKAN\BYCHATGPT\FIRSTLEARN\FIRSTLEARN\TRIANGLE.VERT
+"C:\VulkanSDK\1.4.335.0\Bin\glslc.exe" "D:\home\vulkan\byChatGPT\FirstLearn\FirstLearn\triangle.vert" -o "D:\home\vulkan\byChatGPT\FirstLearn\FirstLearn\triangle.vert.spv"
