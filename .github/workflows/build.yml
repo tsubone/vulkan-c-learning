@@ -1,11 +1,11 @@
-name: Build Visual Studio Solution
+name: Build SLN
 
 on:
   push:
   pull_request:
 
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
 
     steps:
@@ -15,6 +15,29 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      - name: Build
+      - name: Install Vulkan SDK
+        shell: pwsh
+        run: |
+          $version = "1.4.335.0"
+          $url = "https://sdk.lunarg.com/sdk/download/$version/windows/VulkanSDK-$version-Installer.exe"
+          $installer = "$env:RUNNER_TEMP\VulkanSDK-$version-Installer.exe"
+
+          Invoke-WebRequest -Uri $url -OutFile $installer
+
+          Start-Process -FilePath $installer `
+            -ArgumentList "--root C:\VulkanSDK\$version --accept-licenses --default-answer --confirm-command install" `
+            -Wait
+
+          echo "VULKAN_SDK=C:\VulkanSDK\$version" >> $env:GITHUB_ENV
+          echo "C:\VulkanSDK\$version\Bin" >> $env:GITHUB_PATH
+
+      - name: Check Vulkan SDK
+        shell: pwsh
+        run: |
+          echo "VULKAN_SDK=$env:VULKAN_SDK"
+          glslc --version
+          glslangValidator --version
+
+      - name: Build solution
         run: msbuild vulkan-c-learning.sln /p:Configuration=Debug /p:Platform=x64
         
