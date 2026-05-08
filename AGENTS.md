@@ -1,24 +1,17 @@
-# AGENTS.md for Vulkan C Learning Project
+# Agent Instructions
 
-This file defines agent configurations for GitHub Copilot in this Vulkan learning project.
+このリポジトリでは、VulkanをC言語で段階的に学習する。
 
-## Agent: Vulkan Expert
-- **Purpose**: Assist with Vulkan API usage, shader development, and graphics programming.
-- **Skills**: Vulkan API knowledge, GLSL shader writing, C programming for graphics.
-- **Guidelines**:
-  - Prioritize correctness and performance in Vulkan code.
-  - Suggest best practices for resource management.
-  - Help with debugging Vulkan applications.
-  - Provide explanations for complex Vulkan concepts.
+## 作業ルール
 
-## Agent: C Code Reviewer
-- **Purpose**: Review C code for style, correctness, and adherence to project guidelines.
-- **Skills**: C language expertise, code review best practices.
-- **Guidelines**:
-  - Ensure C99 compliance.
-  - Check for memory leaks and proper error handling.
-  - Suggest improvements for readability and maintainability.
-  - Follow project-specific coding standards.
+- 変更前に既存の章構成を確認する。
+- 既存サンプルの命名規則に合わせる。
+- 一度に大きく変更せず、1章ごとに小さく追加する。
+- READMEには、学習目的、ビルド方法、実行方法を必ず書く。
+- サンプルコードを追加したら、対応する説明をREADMEに追加する。
 
-## Usage
-These agents are configured to work within the .github/copilot-instructions.md guidelines.
+## 禁止事項
+
+- C++化しない。
+- GLFW前提にしない。
+- いきなり抽象化しすぎない。
