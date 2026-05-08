@@ -1,5 +1,7 @@
 # Vulkan C Learning
 
+![Build](https://github.com/tsubone/vulkan-c-learning/actions/workflows/build.yml/badge.svg)
+
 C言語で Vulkan を学習するためのリポジトリです。  
 Windows / Visual Studio 2022 / Win32 API を使って、Vulkan の基本的な初期化から三角形描画、毎フレーム描画ループ、バッファ、Uniform Buffer、Descriptor などを段階的に学んでいきます。
 
