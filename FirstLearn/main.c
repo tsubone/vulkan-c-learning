@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <math.h>
-#include <vulkan/vulkan.h>u
+#include <vulkan/vulkan.h>
 
 #pragma comment(lib, "vulkan-1.lib")
 
