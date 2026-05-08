@@ -1,27 +1,18 @@
-# Copilot Instructions for Vulkan C Learning Project
+# Copilot Instructions
 
-## Project Overview
-This is a Vulkan learning project written in C. The goal is to understand Vulkan API through simple examples.
+このリポジトリは、C言語でVulkanを段階的に学習するためのサンプル集です。
 
-## Coding Guidelines
-- Use C99 standard.
-- Follow Vulkan best practices for resource management.
-- Include error checking for Vulkan calls.
-- Use descriptive variable names.
-- Comment complex Vulkan operations.
+## 基本方針
 
-## File Structure
-- `main.c`: Main application code.
-- `triangle.vert` and `triangle.frag`: GLSL shader sources.
-- Avoid committing build artifacts (.spv files, build directories).
+- C++ではなくC言語で書く。
+- GLFWではなく、可能な限りWin32 APIを使う。
+- サンプルは小さく、段階的に理解できる構成にする。
+- Vulkan APIの呼び出し順序を重視する。
+- エラー処理は `VkResult` を確認し、失敗時は分かりやすく表示する。
+- コメントは日本語で、初心者が復習しやすい説明にする。
 
-## Specific Instructions
-- When suggesting code, ensure Vulkan objects are properly initialized and destroyed.
-- Prefer explicit error handling over assertions.
-- Use Vulkan validation layers in debug builds.
-- Suggest improvements for performance and correctness.
+## ビルド方針
 
-## Tools and Dependencies
-- Vulkan SDK required.
-- Visual Studio for building on Windows.
-- GLSL compiler for shaders.
+- Windows + Visual Studio 2022 を想定する。
+- Vulkan SDK がインストール済みである前提にする。
+- shader は `glslc` または `glslangValidator` で SPIR-V に変換する。
